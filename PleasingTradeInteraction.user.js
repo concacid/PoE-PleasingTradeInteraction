@@ -10,8 +10,23 @@
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 
-$('.whisper-btn').parent().after('<li><a href="#" onclick="return false" class="pwhisper-btn" title="Pleasing Trade Interaction">PTA</a></li>');
+insertPTI();
 
+var domMutObserver = new MutationObserver(function(mutations) {
+    insertPTI();
+  mutations.forEach(function(mutation) {
+		//console.log(mutation.type);
+    //console.log(mutation.target);
+	});
+});
+
+$.each($('.search-results-block'), function(i, node) {
+  domMutObserver.observe(node, { attributes: true, childList: true, characterData: true });
+});
+
+function insertPTI() {
+  $('.whisper-btn').parent().after('<li><a href="#" onclick="return false" class="pwhisper-btn" title="Pleasing Trade Interaction">PTA</a></li>');
+}
 
 var pleasingWhisperClipboard = new Clipboard(".pwhisper-btn", {
     text: function(trigger) {
