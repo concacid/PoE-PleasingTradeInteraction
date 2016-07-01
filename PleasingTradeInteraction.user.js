@@ -7,6 +7,9 @@
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js
 // ==/UserScript==
 
+this.$ = this.jQuery = jQuery.noConflict(true);
+
+
 $('.whisper-btn').parent().after('<li><a href="#" onclick="return false" class="pwhisper-btn" title="Pleasing Trade Interaction">PTA</a></li>');
 
 
