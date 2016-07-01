@@ -44,7 +44,7 @@ pleasingWhisperClipboard.on("error", function(e) {
 function pleasingWhisperMessage(o) {
   var item = $(o).parents('.item');
 
-  var bo = item.data('buyout') ? ' You have listed the aforementioned item for ' + item.data('buyout') + '; A fine price, if I say so myself. As you have expressed interest in selling for this price,' : '';
+  var bo = item.data('buyout') ? ' You have listed the aforementioned item for ' + item.data('buyout') + '; A fine price, if I may say so myself. As you have expressed interest in selling for this price,' : '';
 
   var prefix = '';
   if (item.data('level') != undefined)
@@ -62,7 +62,7 @@ function pleasingWhisperMessage(o) {
     ' It is a ' + prefix + item.data('name') +
     ' located in ' + item.data('league') + ' league' + tabMsg + '.' +
     bo +
-    ' I would love to buy it from you, as you expressed.' +
+    ' I would love to buy it from you, at your earliest convenience.' +
     ' Thank you for your time. I look forward to a pleasing social' +
     ' interaction and trade experience with you.';
 
